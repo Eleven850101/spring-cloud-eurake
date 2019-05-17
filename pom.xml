@@ -7,10 +7,13 @@
     <groupId>com.github.summerwind007</groupId>
     <artifactId>spring-cloud-msa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <modules>
         <module>base-registry</module>
+        <module>base-config</module>
+        <module>base-cloud-parent</module>
     </modules>
-    <packaging>pom</packaging>
 
     <name>spring-cloud-msa</name>
     <description>Follow me, Begin the Microservices Architecture</description>
