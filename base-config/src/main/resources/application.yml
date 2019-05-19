@@ -1,17 +1,25 @@
-server:
-  port: 9011
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    wait-time-in-ms-when-sync-empty: 0
-    enable-self-preservation: false
-
 spring:
   application:
     name: Config Center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/summerwind007/biz-config-file.git
+          search-paths: /*
+          force-pull: true
+          #username:
+          #password:
+
+server:
+  port: 9011
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    instance-id: http://${eureka.instance.hostname}:${server.port}
+    ip-address: ${eureka.instance.hostname}
