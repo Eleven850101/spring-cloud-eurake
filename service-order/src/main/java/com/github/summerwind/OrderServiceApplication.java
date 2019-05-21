@@ -3,18 +3,17 @@ package com.github.summerwind;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * @author xiasx
- * @create 2019-05-19 17:28
+ * @create 2019-05-22 0:42
  **/
+
 @EnableDiscoveryClient
-@EnableConfigServer
 @SpringBootApplication
-public class BaseConfigApplication {
+public class OrderServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BaseConfigApplication.class);
+        SpringApplication.run(OrderServiceApplication.class, args);
     }
 }

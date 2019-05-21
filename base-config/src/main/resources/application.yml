@@ -17,9 +17,9 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:9001/eureka/
   instance:
-    hostname: localhost
+    hostname: 127.0.0.1
     prefer-ip-address: false
     instance-id: http://${eureka.instance.hostname}:${server.port}
     ip-address: ${eureka.instance.hostname}

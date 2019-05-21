@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: zuul-ratelimit
+server:
+  port: 9021
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:9001/eureka/
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: false
+    instance-id: http://${eureka.instance.hostname}:${server.port}
+    ip-address: ${eureka.instance.hostname}
+zuul:
+  routes:
+    order-service:
+      path: /order/**
+      serviceId: order-service
+  ratelimit:
+    key-prefix: ratelimit
+    enabled: true
+    repository: in_memory
+    behind-proxy: true
+    default-policy:
+      limit: 2
+      quota: 1
+      refresh-interval: 3
+
