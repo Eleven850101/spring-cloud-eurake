@@ -1,0 +1,17 @@
+server:
+  port: 9021
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9001/eureka/
+spring:
+  cloud:
+    config:
+      name: zuul-config
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        serviceId: base-config
+      username: summerwind007
+      password: xiashixin1985
